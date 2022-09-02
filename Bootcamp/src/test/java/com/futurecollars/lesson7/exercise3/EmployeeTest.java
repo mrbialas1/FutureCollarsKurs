@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmployeeTest {
     @Test
-    void shouldBeFree() {
+    void shouldBeTheSameInformation() {
         //given
         int bonus =400;
         Manager manager = new Manager("Jan", "Kowalski", 2008);
