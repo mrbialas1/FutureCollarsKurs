@@ -4,7 +4,7 @@ import static com.futurecollars.lesson6.exercise4.Majority.majorityChecking;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Enter your age");
+        System.out.println("Enter your actual age");
         Scanner sc = new Scanner(System.in);
         int age = sc.nextInt();
         boolean adult=majorityChecking(age);

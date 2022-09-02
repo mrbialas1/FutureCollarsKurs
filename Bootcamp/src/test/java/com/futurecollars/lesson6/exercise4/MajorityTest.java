@@ -6,7 +6,7 @@ public class MajorityTest {
     @Test
     void shouldBeFalse() {
         //given
-        int age = 17;
+        int age = 16;
         //when
         boolean child = Majority.majorityChecking(age);
         //then
