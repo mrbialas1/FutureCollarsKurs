@@ -1,6 +1,7 @@
 package com.futurecollars.lesson9.task4;
 
 import java.math.BigDecimal;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +48,7 @@ class EmployeeTest {
         //given
         BigDecimal baseSalary = new BigDecimal("3000");
         BigDecimal bonus = new BigDecimal("500");
-        Employee employee = new Employee("John", 45, baseSalary, bonus, "Smith");
+        Employee employee = new Employee("John", "Smith", 45, baseSalary, bonus);
         //when
         BigDecimal actualTotalSalary = employee.getFinalSalary();
         //then
@@ -60,7 +61,7 @@ class EmployeeTest {
         //given
         BigDecimal baseSalary = new BigDecimal("3000");
         BigDecimal bonus = new BigDecimal("500");
-        Employee employee = new Employee("John", 45, baseSalary, bonus, "Smith");
+        Employee employee = new Employee("John", "Smith", 45, baseSalary, bonus);
         //when
         BigDecimal actualBonus = employee.getBonus();
         //then
