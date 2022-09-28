@@ -7,30 +7,39 @@ public class Main {
         System.out.println("Wprowadż tekst");
         Scanner sc = new Scanner(System.in);
         String text = sc.nextLine();
-        System.out.println("tekst: ");
-        boolean palindrome = false;
-        if(text.length()==0){
+        processText(text);
+
+    }
+
+    public static void processText(String text) {
+        if (text.length() == 0) {
             System.out.println("Brak znaków");
-        }
-        else{
+        } else {
             System.out.println("Tekst posiada znaki");
-            for (int i = 0; i < text.length(); i++) {
-                if(text.charAt(i)==text.charAt(text.length()-i-1)){
-                    palindrome = true;
-                }
-                else {
-                    palindrome = false;
-                    break;
-                }
-            }
-            if(palindrome){
-                System.out.println("Tekst jest palindromem");
-            }
-            else {
-                System.out.println("Tekst nie jest palindromem");
-            }
+            boolean palindrome = isPalindrome(text);
+            printIsPalindrome(palindrome);
             System.out.println("Długośc tekstu wynosi " + text.length() + " znaków");
         }
+    }
 
+    private static void printIsPalindrome(boolean palindrome) {
+        if (palindrome) {
+            System.out.println("Tekst jest palindromem");
+        } else {
+            System.out.println("Tekst nie jest palindromem");
+        }
+    }
+
+    private static boolean isPalindrome(String text) {
+        boolean isPalindrome = false;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == text.charAt(text.length() - i - 1)) {
+                isPalindrome = true;
+            } else {
+                isPalindrome = false;
+                break;
+            }
+        }
+        return isPalindrome;
     }
 }
