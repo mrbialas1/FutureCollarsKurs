@@ -1,13 +1,23 @@
 package com.futurecollars.lesson8.exercise3;
 
-public class Square implements AreaAndPerimeter{
-    @Override
-    public double countArea(double side) {
-        return side*side;
+public class Square implements AreaAndPerimeter {
+    private final double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public double getSide() {
+        return side;
     }
 
     @Override
-    public double countPerimeter(double side) {
-        return 4*side;
+    public double countArea() {
+        return getSide() * getSide();
+    }
+
+    @Override
+    public double countPerimeter() {
+        return 4 * getSide();
     }
 }

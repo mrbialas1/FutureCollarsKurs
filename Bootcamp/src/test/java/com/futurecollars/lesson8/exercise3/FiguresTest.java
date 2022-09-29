@@ -8,21 +8,22 @@ public class FiguresTest {
     void shouldCountSquareArea() {
         //given
         double side = 3.5;
-        Square square = new Square();
+        Square square = new Square(side);
 
         //when
-        double area = square.countArea(side);
+        double area = square.countArea();
         //then
         Assertions.assertEquals(side * side, area);
     }
+
     @Test
     void shouldCountCirclePerimeter() {
         //given
         double radius = 4;
-        Circle circle = new Circle();
+        Circle circle = new Circle(radius);
         //when
-        double perimeter = circle.countPerimeter(radius);
+        double perimeter = circle.countPerimeter();
         //then
-        Assertions.assertEquals(2*Math.PI*radius, perimeter);
+        Assertions.assertEquals(2 * Math.PI * radius, perimeter);
     }
 }
