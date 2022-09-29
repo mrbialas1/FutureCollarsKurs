@@ -1,5 +1,7 @@
 package com.futurecollars.lesson6.exercise6;
+
 import java.util.Scanner;
+
 import static com.futurecollars.lesson6.exercise6.WeekConverter.convertNumberToWeekDay;
 
 public class Main {
@@ -7,7 +9,7 @@ public class Main {
         System.out.println("podaj liczbę całkowitą odpowiadającą dniu tygodnia (od 1 do 7) ");
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
-        String day= convertNumberToWeekDay(number);
+        String day = convertNumberToWeekDay(number);
         System.out.println(day);
     }
 }
