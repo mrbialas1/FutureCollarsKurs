@@ -1,10 +1,11 @@
 package com.futurecollars.lesson7.exercise1;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.futurecollars.lesson7.exercise1.Main.stateCheck;
 
-public class CinemaTest {
+public class CinemaSeatTest {
     @Test
     void shouldBeFree() {
         //given
@@ -12,8 +13,9 @@ public class CinemaTest {
         //when
         String state = stateCheck(stateOfUse);
         //then
-        Assertions.assertEquals("Wolne",state);
+        Assertions.assertEquals("Wolne", state);
     }
+
     @Test
     void shouldBeBusy() {
         //given
@@ -21,6 +23,6 @@ public class CinemaTest {
         //when
         String state = stateCheck(stateOfUse);
         //then
-        Assertions.assertEquals("Zajęte",state);
+        Assertions.assertEquals("Zajęte", state);
     }
 }
