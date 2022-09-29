@@ -3,7 +3,7 @@ package com.futurecollars.lesson7.exercise1;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.futurecollars.lesson7.exercise1.Main.stateCheck;
+import static com.futurecollars.lesson7.exercise1.CinemaSeat.stateCheck;
 
 public class CinemaSeatTest {
     @Test
