@@ -2,7 +2,7 @@ package com.futurecollars.lesson6.exercise6;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class WeekTest {
+public class WeekConverterTest {
     @Test
     void shouldBeWorkDay() {
         //given
@@ -10,7 +10,7 @@ public class WeekTest {
         int number = 2;
         int tableNumber = number-1;
         //when
-        String day = Week.weekDayThrower(number);
+        String day = WeekConverter.convertNumberToWeekDay(number);
         //then
         Assertions.assertEquals(inWeek[tableNumber],day);
     }
@@ -19,7 +19,7 @@ public class WeekTest {
         //given
         int number = 6;
         //when
-        String day = Week.weekDayThrower(number);
+        String day = WeekConverter.convertNumberToWeekDay(number);
         //then
         Assertions.assertEquals("Weekend",day);
     }
@@ -28,7 +28,7 @@ public class WeekTest {
         //given
         int number = 9;
         //when
-        String day = Week.weekDayThrower(number);
+        String day = WeekConverter.convertNumberToWeekDay(number);
         //then
         Assertions.assertEquals("There is no such a day!",day);
     }

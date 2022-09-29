@@ -1,7 +1,7 @@
 package com.futurecollars.lesson6.exercise6;
 
-public class Week {
-    public static String weekDayThrower(int number) {
+public class WeekConverter {
+    public static String convertNumberToWeekDay(int number) {
         String day;
         String[] inWeek = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         int tableNumber = number-1;
