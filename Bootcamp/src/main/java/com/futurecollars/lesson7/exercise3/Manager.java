@@ -1,19 +1,27 @@
 package com.futurecollars.lesson7.exercise3;
 
-public class Manager extends BaseEmployee{
-    public int bonus;
-    public Manager(String name, String surname, int employmentYear) {
-        super(name, surname,5000, employmentYear);
+import java.util.Scanner;
+
+public class Manager extends BaseEmployee {
+    private int bonus;
+
+    public int getBonus() {
+        Scanner sc = new Scanner(System.in);
+        return bonus = sc.nextInt();
+    }
+
+    public Manager(String name, String surname, int employmentYear, int bonus) {
+        super(name, surname, 5000, employmentYear, bonus);
     }
 
     @Override
     public int calculateYearsOfEmployment() {
-        return 2022 - employmentYear;
+        return 2022 - getEmploymentYear();
     }
 
     @Override
-    public int calculateMonthlySalary(Integer bonus) {
-        basicSalary = 5000;
-        return basicSalary += bonus;
+    public int calculateMonthlySalary() {
+        return getBasicSalary() + getBonus();
     }
+
 }
