@@ -5,15 +5,6 @@ public abstract class BaseEmployee {
     private final String surname;
     private final int basicSalary;
     private final int employmentYear;
-    private int bonus;
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
 
     public int getBasicSalary() {
         return basicSalary;
@@ -23,16 +14,12 @@ public abstract class BaseEmployee {
         return employmentYear;
     }
 
-    public int getBonus() {
-        return bonus;
-    }
 
-    public BaseEmployee(String name, String surname, int basicSalary, int employmentYear, int bonus) {
+    public BaseEmployee(String name, String surname, int basicSalary, int employmentYear) {
         this.name = name;
         this.surname = surname;
         this.basicSalary = basicSalary;
         this.employmentYear = employmentYear;
-        this.bonus = bonus;
     }
 
     public abstract int calculateYearsOfEmployment();
