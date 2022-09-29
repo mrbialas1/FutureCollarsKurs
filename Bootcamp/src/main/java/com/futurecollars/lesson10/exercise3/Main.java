@@ -1,22 +1,14 @@
 package com.futurecollars.lesson10.exercise3;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
+import static com.futurecollars.lesson10.exercise3.FileReader.readEverySecondLineOfFile;
+import static com.futurecollars.lesson10.exercise3.FileReader.readFile;
 
 public class Main {
     public static void main(String[] args) {
-        String content = null;
-        try {
-            content = Files.readString(Paths.get("C:/Users/mrbia/Desktop/FutureCollarsKurs/Bootcamp/src/main" +
-                    "/java/com/futurecollars/lesson10/exercise3/data.txt"));
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
-        String[] value = content.split("\n");
-        for (int i = 1; i <value.length; i++) {
-            System.out.println(value[i]);
-            i++;
-        }
+        String path = "C:/Users/mrbia/Desktop/FutureCollarsKurs/Bootcamp/src/main" +
+                "/java/com/futurecollars/lesson10/exercise3/data.txt";
+        String content = readFile(path);
+        readEverySecondLineOfFile(content);
     }
 }
