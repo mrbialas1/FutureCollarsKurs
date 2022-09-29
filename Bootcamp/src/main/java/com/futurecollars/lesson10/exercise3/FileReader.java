@@ -17,9 +17,8 @@ public class FileReader {
 
     public static void readEverySecondLineOfFile(String content) {
         String[] value = content.split("\n");
-        for (int i = 1; i < value.length; i++) {
+        for (int i = 1; i < value.length; i=i+2) {
             System.out.println(value[i]);
-            i++;
         }
     }
 }
