@@ -11,11 +11,10 @@ public class CinemaSeat {
         this.placeNumber = placeNumber;
         this.rowNumber = rowNumber;
         this.isFree = isFree;
-        String state = stateCheck(isFree);
-        writeSeatInfo(placeNumber, rowNumber, state);
     }
 
-    private static void writeSeatInfo(int placeNumber, int rowNumber, String state) {
-        System.out.println(state + " miejce " + placeNumber + " w rzędzie " + rowNumber);
+    public static void writeSeatInfo(CinemaSeat place) {
+        String state = stateCheck(place.isFree);
+        System.out.println(state + " miejce " + place.placeNumber + " w rzędzie " + place.rowNumber);
     }
 }
