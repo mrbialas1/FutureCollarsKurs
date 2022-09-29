@@ -3,13 +3,13 @@ package com.futurecollars.lesson6.exercise5;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class isNumberEvenTest {
+public class ParityCheckingTest {
     @Test
     void shouldBeTrue() {
         //given
         int number = 2;
         //when
-        boolean answer = isNumberEven.parityChecking(number);
+        boolean answer = ParityChecking.isNumberEven(number);
         //then
         Assertions.assertTrue(answer);
     }
@@ -19,7 +19,7 @@ public class isNumberEvenTest {
         //given
         int number = -1;
         //when
-        boolean answer = isNumberEven.parityChecking(number);
+        boolean answer = ParityChecking.isNumberEven(number);
         //then
         Assertions.assertFalse(answer);
     }
