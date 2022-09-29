@@ -1,18 +1,23 @@
 package com.futurecollars.lesson8.exercise2;
 
-public class Square extends Rectangle {
+public class Square extends Shape {
+    private final double side;
 
-    public Square(double length1) {
-        super(length1, 0);
+    public double getSide() {
+        return side;
+    }
+
+    public Square(double side) {
+        this.side = side;
     }
 
     @Override
     public double getArea() {
-        return getLength1() * getLength1();
+        return side * side;
     }
 
     @Override
     public double getPerimeter() {
-        return getLength1() * 4;
+        return side * 4;
     }
 }
