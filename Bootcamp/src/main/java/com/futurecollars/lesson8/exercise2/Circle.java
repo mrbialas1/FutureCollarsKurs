@@ -1,15 +1,18 @@
 package com.futurecollars.lesson8.exercise2;
 
-public class Circle extends Shape{
-    double radiusLength=5;
-    double pi=Math.PI;
+public class Circle extends Square {
+
+    public Circle(double length1) {
+        super(length1);
+    }
+
     @Override
     public double getArea() {
-        return pi*radiusLength*radiusLength;
+        return Math.PI * getLength1() * getLength1();
     }
 
     @Override
     public double getPerimeter() {
-        return 2*pi*radiusLength;
+        return 2 * Math.PI * getLength1();
     }
 }

@@ -2,8 +2,8 @@ package com.futurecollars.lesson8.exercise2;
 
 public class Main {
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle();
-        Triangle triangle = new Triangle();
+        Rectangle rectangle = new Rectangle(4, 5);
+        Triangle triangle = new Triangle(2, 3, 4, 5);
         double rectangleArea = rectangle.getArea();
         double rectanglePerimeter = rectangle.getPerimeter();
         System.out.println(rectangleArea);
