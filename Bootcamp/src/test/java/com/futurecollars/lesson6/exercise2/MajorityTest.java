@@ -7,18 +7,18 @@ public class MajorityTest {
     @Test
     void shouldBeFalse() {
         boolean child = Majority.majorityChecking(16);
-        Assertions.assertEquals(false, child);
+        Assertions.assertFalse(child);
     }
 
     @Test
     void shouldBeTrue() {
         boolean adult = Majority.majorityChecking(30);
-        Assertions.assertEquals(true, adult);
+        Assertions.assertTrue(adult);
     }
 
     @Test
     void shouldBeTrueToo() {
         boolean newAdult = Majority.majorityChecking(18);
-        Assertions.assertEquals(true, newAdult);
+        Assertions.assertTrue(newAdult);
     }
 }
