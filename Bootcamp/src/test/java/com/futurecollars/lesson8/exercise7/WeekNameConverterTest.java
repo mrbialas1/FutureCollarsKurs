@@ -3,7 +3,7 @@ package com.futurecollars.lesson8.exercise7;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.futurecollars.lesson8.exercise7.WeekNameConverter.writeDayOfWeek;
+import static com.futurecollars.lesson8.exercise7.WeekNameConverter.getDayOfWeek;
 
 public class WeekNameConverterTest {
     @Test
@@ -11,7 +11,7 @@ public class WeekNameConverterTest {
         //given
         int number = 5;
         //when
-        String day = writeDayOfWeek(number);
+        String day = getDayOfWeek(number);
         //then
         Assertions.assertEquals("Friday", day);
     }
@@ -21,7 +21,7 @@ public class WeekNameConverterTest {
         //given
         int number = 9;
         //when
-        String day = writeDayOfWeek(number);
+        String day = getDayOfWeek(number);
         //then
         Assertions.assertEquals("Nie ma dnia tygodnia o takim numerze", day);
     }
