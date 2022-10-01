@@ -2,7 +2,7 @@ package com.futurecollars.lesson9.exercise3;
 
 public class ExtendedCalculator {
     public double calculate(double number1, double number2, MathOperation mathOperation) {
-        Calculator calculator = null;
+        Calculator calculator;
         switch (mathOperation) {
             case ADDITION:
                 calculator = new Addition();
@@ -23,8 +23,7 @@ public class ExtendedCalculator {
                 calculator = new ToThePowerOf();
                 break;
             default:
-                System.out.println("Nie ma takiej operacji");
-
+                throw new IllegalArgumentException(String.format("Operacja %s nie jest dostępna", mathOperation));
         }
         return calculator.calculate(number1, number2);
     }
