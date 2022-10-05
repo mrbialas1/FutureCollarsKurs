@@ -4,13 +4,13 @@ import java.time.Month;
 
 public class Main {
     public static void main(String[] args) {
-        String month = String.valueOf(Month.APRIL);
+        Month month = Month.APRIL;
         writeActualSeason(month);
     }
 
-    private static void writeActualSeason(String month) {
-        SeasonsByMonth seasonsByMonth = new SeasonsByMonth();
-        Seasons season = seasonsByMonth.seasonByMonthChecking(month);
+    private static void writeActualSeason(Month month) {
+        SeasonsByMonthConverter seasonsByMonthConverter = new SeasonsByMonthConverter();
+        Seasons season = seasonsByMonthConverter.seasonByMonthChecking(month);
         System.out.println("Actual season: " + season);
     }
 }
