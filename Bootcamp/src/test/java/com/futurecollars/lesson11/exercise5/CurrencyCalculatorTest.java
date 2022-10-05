@@ -10,8 +10,8 @@ import java.util.stream.Stream;
 
 class CurrencyCalculatorTest {
     @ParameterizedTest
-    @MethodSource("provideMonthsForChooseSeason")
-    void shouldVerifyStringTrimAndInLowerCase(Currency input, double rate, double output) {
+    @MethodSource("provideCurrenciesExchangeValues")
+    void shouldCalculateExchangeValues(Currency input, double rate, double output) {
         //given
         int amount = 100;
         CurrencyExchangeRate currencyExchangeRateMock = Mockito.mock(CurrencyExchangeRate.class);
@@ -23,7 +23,7 @@ class CurrencyCalculatorTest {
         Assertions.assertEquals(output, answer);
     }
 
-    private static Stream<Arguments> provideMonthsForChooseSeason() {
+    private static Stream<Arguments> provideCurrenciesExchangeValues() {
         return Stream.of(
                 Arguments.of(Currency.EUR, 0.25, 25),
                 Arguments.of(Currency.GBP, 0.2, 20),
