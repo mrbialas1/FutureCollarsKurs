@@ -5,14 +5,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class MainTest {
+public class NumberServiceTest {
     @ParameterizedTest
-    @ValueSource(ints = {245, 6123, 18567, 0, 100})
+    @ValueSource(ints = {246, 6124, 18562, 0, 100})
     public void shouldReturnEvenStatement(int input) {
         //given
-        ProblemSolve problemSolve = new ProblemSolve();
+        NumberService numberService = new NumberService();
         //when
-        boolean answer = problemSolve.isDivisibleOfTwo(input);
+        boolean answer = numberService.isEven(input);
         //then
         Assertions.assertTrue(answer);
     }
@@ -21,9 +21,9 @@ public class MainTest {
     @CsvSource(value = {"6123 :12", " 18567:27", " 100 :1"}, delimiter = ':')
     void shouldDoAdditionOfEveryNumberDigit(int input, int expected) {
         //given
-        ProblemSolve problemSolve = new ProblemSolve();
+        NumberService numberService = new NumberService();
         //when
-        int answerValue = problemSolve.addEveryDigitOfNumber(input);
+        int answerValue = numberService.addEveryDigitOfNumber(input);
         //then
         Assertions.assertEquals(expected, answerValue);
     }

@@ -7,10 +7,10 @@ public class Main {
         System.out.println("Wprowadź liczbę");
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
-        ProblemSolve problemSolve = new ProblemSolve();
-        boolean statement = problemSolve.isDivisibleOfTwo(number);
+        NumberService numberService = new NumberService();
+        boolean statement = numberService.isEven(number);
         writeIsDivisibleOfTwo(number, statement);
-        int answer = problemSolve.addEveryDigitOfNumber(number);
+        int answer = numberService.addEveryDigitOfNumber(number);
         System.out.println("Suma poszczególnych cyfr liczby wynosi " + answer);
 
     }

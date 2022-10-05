@@ -1,6 +1,6 @@
 package com.futurecollars.lesson11.exercise1;
 
-public class ProblemSolve {
+public class NumberService {
     public int addEveryDigitOfNumber(int number) {
         String stringNumber = Integer.toString(number);
         int[] everyDigitOfNumber = new int[stringNumber.length()];
@@ -12,7 +12,7 @@ public class ProblemSolve {
         return answer;
     }
 
-    public boolean isDivisibleOfTwo(int number) {
+    public boolean isEven(int number) {
         return number % 2 == 0;
     }
 }
