@@ -5,8 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.stream.Stream;
 
 class DateOfBirthTest {
@@ -35,9 +35,8 @@ class DateOfBirthTest {
         //given
         LocalDate date = LocalDate.of(input1, input2, input3);
         DateOfBirth dateOfBirth = new DateOfBirth();
-        Period period = dateOfBirth.countYearsOld(date);
         //when
-        int yearsOld = period.getYears();
+        long yearsOld = dateOfBirth.countYearsOld(date);
         //then
         Assertions.assertEquals(expected, yearsOld);
     }
@@ -51,12 +50,12 @@ class DateOfBirthTest {
 
     @ParameterizedTest
     @MethodSource("provideDateToFindWeekDay")
-    void shouldReturnDayOfWeek(int input1, int input2, int input3, String expected) {
+    void shouldReturnDayOfWeek(int input1, int input2, int input3, DayOfWeek expected) {
         //given
         LocalDate date = LocalDate.of(input1, input2, input3);
         DateOfBirth dateOfBirth = new DateOfBirth();
         //when
-        String weekDayOfBirth = String.valueOf(dateOfBirth.findWhichDayOfWeek(date));
+        DayOfWeek weekDayOfBirth = dateOfBirth.findWhichDayOfWeek(date);
         //then
         Assertions.assertEquals(expected, weekDayOfBirth);
     }

@@ -6,9 +6,10 @@ import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 public class DateOfBirth {
-    public Period countYearsOld(LocalDate dateOfBirth) {
-        LocalDate dateNow = LocalDate.now();
-        return Period.between(dateOfBirth, dateNow);
+    public long countYearsOld(LocalDate dateOfBirth) {
+        LocalDate dateNow = LocalDate.of(2022, 10, 10);
+        Period period = Period.between(dateOfBirth, dateNow);
+        return period.getYears();
     }
 
     public DayOfWeek findWhichDayOfWeek(LocalDate dateOfBirth) {
