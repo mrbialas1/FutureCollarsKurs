@@ -1,8 +1,7 @@
 package com.futurecollars.lesson12.exercise4;
 
-import java.util.Comparator;
 
-public class Person implements Comparator<Person> {
+public class Person implements Comparable<Person> {
     private final String name;
     private final String surname;
     private final int birthYear;
@@ -19,9 +18,10 @@ public class Person implements Comparator<Person> {
     }
 
     @Override
-    public int compare(Person o1, Person o2) {
-        return Integer.compare(o1.birthYear, o2.birthYear);
+    public int compareTo(Person o) {
+        return Integer.compare(o.birthYear, this.birthYear);
     }
+
 
     public String getSurname() {
         return surname;
