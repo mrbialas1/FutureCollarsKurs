@@ -6,9 +6,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 
-
 import java.util.stream.Stream;
-
 
 class CalculatorTest {
     @ParameterizedTest
@@ -30,7 +28,6 @@ class CalculatorTest {
                 Arguments.of(3000, 300, 4700),
                 Arguments.of(4000, 700, 7300),
                 Arguments.of(3200, 400, 5300)
-
         );
     }
 
