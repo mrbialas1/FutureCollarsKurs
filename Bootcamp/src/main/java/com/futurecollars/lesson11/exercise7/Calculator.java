@@ -1,9 +1,18 @@
 package com.futurecollars.lesson11.exercise7;
 
-public class Calculator {
+public class Calculator implements Salary, SaturdaysWork {
     private final double bonus;
     private final int saturdaysWorked;
-    private final VariablePayments variablePayments;
+
+    @Override
+    public int basicSalary() {
+        return 3000;
+    }
+
+    @Override
+    public int saturdaysWorkBonus() {
+        return 250;
+    }
 
     public double getBonus() {
         return bonus;
@@ -13,13 +22,12 @@ public class Calculator {
         return saturdaysWorked;
     }
 
-    public Calculator(double bonus, int saturdaysWorked, VariablePayments variablePayments) {
+    public Calculator(double bonus, int saturdaysWorked) {
         this.bonus = bonus;
         this.saturdaysWorked = saturdaysWorked;
-        this.variablePayments = variablePayments;
     }
 
-    public double calculateFinalSalary(double bonus, int saturdaysWorked, VariablePayments variablePayments) {
-        return variablePayments.basicSalary() + bonus + variablePayments.saturdayWorkBonus() + saturdaysWorked;
+    public double calculateFinalSalary(double bonus, int saturdaysWorked, double basicSalary, double saturdayWorkBonus) {
+        return basicSalary + bonus + saturdayWorkBonus * saturdaysWorked;
     }
 }

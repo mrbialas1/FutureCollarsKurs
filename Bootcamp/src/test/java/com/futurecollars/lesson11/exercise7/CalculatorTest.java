@@ -12,24 +12,24 @@ import java.util.stream.Stream;
 
 class CalculatorTest {
     @ParameterizedTest
-    @MethodSource("provideStringsForTrimAndInLowerCase")
-    void shouldVerifyStringTrimAndInLowerCase(double basicSalary, double saturdayWorkBonus, double expected) {
+    @MethodSource("provideParametersToCountSalary")
+    void shouldCountSalary(int basicSalary, int saturdayWorkBonus, double expected) {
         //given
-        VariablePayments variablePaymentsMock = Mockito.mock(VariablePayments.class);
-        Calculator calculator = new Calculator(500, 4, variablePaymentsMock);
-        Mockito.when(variablePaymentsMock.basicSalary()).thenReturn(basicSalary);
-        Mockito.when(variablePaymentsMock.saturdayWorkBonus()).thenReturn(saturdayWorkBonus);
+        Calculator calculator = new Calculator(500, 4);
+        Calculator calculatorMock = Mockito.mock(Calculator.class);
+        Mockito.when(calculatorMock.basicSalary()).thenReturn(basicSalary);
+        Mockito.when(calculatorMock.saturdaysWorkBonus()).thenReturn(saturdayWorkBonus);
         //when
-        double finalSalary = calculator.calculateFinalSalary(calculator.getBonus(),calculator.getSaturdaysWorked(),variablePaymentsMock);
+        double finalSalary = calculator.calculateFinalSalary(calculator.getBonus(), calculator.getSaturdaysWorked(), calculatorMock.basicSalary(), calculatorMock.saturdaysWorkBonus());
         //then
         Assertions.assertEquals(expected, finalSalary);
     }
 
-    private static Stream<Arguments> provideStringsForTrimAndInLowerCase() {
+    private static Stream<Arguments> provideParametersToCountSalary() {
         return Stream.of(
-                Arguments.of("3000 ","300 ", "4700"),
-                Arguments.of("4000 ","700 ", "7300"),
-                Arguments.of("3200 ","400 ", "5300")
+                Arguments.of(3000, 300, 4700),
+                Arguments.of(4000, 700, 7300),
+                Arguments.of(3200, 400, 5300)
 
         );
     }
