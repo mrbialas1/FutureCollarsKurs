@@ -4,13 +4,15 @@ import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
-        IntStream ints = IntStream.range(0, 61);
-        ints.forEach(Main::writeWhenThreeDivision);
+        int from = 0;
+        int to = 61;
+        filterDivisionByThree(from, to);
     }
 
-    public static void writeWhenThreeDivision(int ints) {
-        if (ints % 3 == 0) {
-            System.out.println(ints);
-        }
+    private static void filterDivisionByThree(int from, int to) {
+        IntStream ints = IntStream.range(from, to);
+         ints
+                .filter(in -> in % 3 == 0)
+                .forEach(System.out::println);
     }
 }
