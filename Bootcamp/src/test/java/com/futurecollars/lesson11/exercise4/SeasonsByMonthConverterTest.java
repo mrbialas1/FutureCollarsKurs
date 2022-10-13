@@ -11,22 +11,21 @@ import java.util.stream.Stream;
 class SeasonsByMonthConverterTest {
     @ParameterizedTest
     @MethodSource("provideMonthsForChooseSeason")
-    void shouldCheckActualSeason(Month input, String expected) {
+    void shouldCheckActualSeason(Month input, Seasons expected) {
         //given
         SeasonsByMonthConverter seasonsByMonthConverter = new SeasonsByMonthConverter();
         //when
         Seasons actualSeasonsValue = seasonsByMonthConverter.seasonByMonthChecking(input);
-        String actualValue = String.valueOf(actualSeasonsValue);
         //then
-        Assertions.assertEquals(expected, actualValue);
+        Assertions.assertEquals(expected, actualSeasonsValue);
     }
 
     private static Stream<Arguments> provideMonthsForChooseSeason() {
         return Stream.of(
-                Arguments.of(Month.APRIL, "SPRING"),
-                Arguments.of(Month.OCTOBER, "AUTUMN"),
-                Arguments.of(Month.FEBRUARY, "WINTER"),
-                Arguments.of(Month.JUNE, "SUMMER")
+                Arguments.of(Month.APRIL, Seasons.SPRING),
+                Arguments.of(Month.OCTOBER, Seasons.AUTUMN),
+                Arguments.of(Month.FEBRUARY, Seasons.WINTER),
+                Arguments.of(Month.JUNE, Seasons.SUMMER)
         );
     }
 
