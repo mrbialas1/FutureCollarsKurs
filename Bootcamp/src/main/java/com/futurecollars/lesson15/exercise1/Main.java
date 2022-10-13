@@ -1,18 +1,21 @@
 package com.futurecollars.lesson15.exercise1;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
         int from = 0;
         int to = 61;
-        filterDivisionByThree(from, to);
+        filterDivisionByThree(from, to)
+                .forEach(System.out::println);
     }
 
-    private static void filterDivisionByThree(int from, int to) {
-        IntStream ints = IntStream.range(from, to);
-         ints
+    private static List<Integer> filterDivisionByThree(int from, int to) {
+        return IntStream.range(from, to)
                 .filter(in -> in % 3 == 0)
-                .forEach(System.out::println);
+                .boxed()
+                .collect(Collectors.toList());
     }
 }
